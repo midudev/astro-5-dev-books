@@ -13,38 +13,39 @@ export const prerender = true
 			<span class="block">Books</span>
 		</h1>
 
-	<section aria-label="Libros recomendados para programadores">
-		<div class="px-4 mx-auto max-w-screen-xl">
-			<div class="grid gap-6 md:grid-cols-2">
-				{
-					books.map(book => {
-						const { slug, data } = book
-						const { title, author, img, readtime, description, buy } = data
-
-						return (
-							<article class="flex">
-								<a href={`/libro/${slug}`} class="mb-2 xl:mb-0 transition hover:scale-110">
-									<img
-										transition:name={`img-${slug}`}
-										class="mr-5 w-48 rounded"
-										src={`/${img}`}
-										alt={title}
-									/>
-								</a>
-								
-								<div class="flex flex-col justify-center">
-									<h2 transition:name={`title-${slug}`} class="mb-2 text-2xl font-bold leading-tight text-white">
-										{title}
-									</h2>
-
-									<p class="mb-4 text-gray-300 max-w-sm">{description}</p>
-									<span class="text-xs">⏳ Lectura en {readtime} minutos</span>
-								</div>
-							</article>
-						)
-					})
-				}
+		<section aria-label="Libros recomendados para programadores">
+			<div class="px-4 mx-auto max-w-screen-xl">
+				<div class="grid gap-6 md:grid-cols-2">
+					{
+						books.map(book => {
+							const { slug, data } = book
+							const { title, author, img, readtime, description, buy } = data
+	
+							return (
+								<article class="flex">
+									<a href={`/libro/${slug}`} class="mb-2 xl:mb-0 transition hover:scale-110">
+										<img
+											transition:name={`img-${slug}`}
+											class="mr-5 w-48 rounded"
+											src={`/${img}`}
+											alt={title}
+										/>
+									</a>
+									
+									<div class="flex flex-col justify-center">
+										<h2 transition:name={`title-${slug}`} class="mb-2 text-2xl font-bold leading-tight text-white">
+											{title}
+										</h2>
+	
+										<p class="mb-4 text-gray-300 max-w-sm">{description}</p>
+										<span class="text-xs">⏳ Lectura en {readtime} minutos</span>
+									</div>
+								</article>
+							)
+						})
+					}
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	<main>
 </Layout>
